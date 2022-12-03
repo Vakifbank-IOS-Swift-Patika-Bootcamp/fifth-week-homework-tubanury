@@ -26,6 +26,10 @@
 		95CD1EEA29316196003DE843 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD1EE929316196003DE843 /* CharacterDetailViewController.swift */; };
 		95CD1EEC293236E7003DE843 /* CharacterQuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD1EEB293236E6003DE843 /* CharacterQuotesViewController.swift */; };
 		95CD1EEE29323ACD003DE843 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD1EED29323ACD003DE843 /* Quote.swift */; };
+		95D016A3293688CD002AB244 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D016A2293688CD002AB244 /* CoreDataManager.swift */; };
+		95D016A529368965002AB244 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D016A429368965002AB244 /* NoteListViewController.swift */; };
+		95D016CB29368BFB002AB244 /* BreakingBad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95D016C929368BFB002AB244 /* BreakingBad.xcdatamodeld */; };
+		95D016CD29369616002AB244 /* NoteAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D016CC29369616002AB244 /* NoteAddEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,10 @@
 		95CD1EE929316196003DE843 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		95CD1EEB293236E6003DE843 /* CharacterQuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterQuotesViewController.swift; path = BreakingBad/Controllers/CharacterQuotesViewController.swift; sourceTree = SOURCE_ROOT; };
 		95CD1EED29323ACD003DE843 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		95D016A2293688CD002AB244 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		95D016A429368965002AB244 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteListViewController.swift; path = BreakingBad/Models/NoteListViewController.swift; sourceTree = SOURCE_ROOT; };
+		95D016CA29368BFB002AB244 /* BreakingBad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreakingBad.xcdatamodel; sourceTree = "<group>"; };
+		95D016CC29369616002AB244 /* NoteAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAddEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,13 +92,12 @@
 			children = (
 				958B6305292FEBBB00BE49F7 /* Resources */,
 				958B6304292FEBAF00BE49F7 /* Utilities */,
-				958B6303292FEBA800BE49F7 /* Network */,
 				958B6302292FEB9700BE49F7 /* Views */,
 				958B6301292FEB8A00BE49F7 /* Models */,
 				958B6300292FEB7F00BE49F7 /* Controllers */,
-				958B62F8292FD6E600BE49F7 /* CharacterCollectionViewCell.swift */,
 				958B62EB292FD21600BE49F7 /* Assets.xcassets */,
 				958B62F0292FD21600BE49F7 /* Info.plist */,
+				95D016C929368BFB002AB244 /* BreakingBad.xcdatamodeld */,
 			);
 			path = BreakingBad;
 			sourceTree = "<group>";
@@ -98,6 +105,8 @@
 		958B6300292FEB7F00BE49F7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95D016CC29369616002AB244 /* NoteAddEditViewController.swift */,
+				95D016A429368965002AB244 /* NoteListViewController.swift */,
 				958B62E6292FD21500BE49F7 /* ViewController.swift */,
 				95CD1EEB293236E6003DE843 /* CharacterQuotesViewController.swift */,
 				95CD1EE729315BDB003DE843 /* ImdbViewController.swift */,
@@ -111,10 +120,11 @@
 		958B6301292FEB8A00BE49F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				958B6308292FED6200BE49F7 /* BaseResponse.swift */,
+				958B6303292FEBA800BE49F7 /* Network */,
 				958B62FE292FEAE600BE49F7 /* Character.swift */,
 				95CD1EE529314B72003DE843 /* Episode.swift */,
 				95CD1EED29323ACD003DE843 /* Quote.swift */,
+				95D016A2293688CD002AB244 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +132,7 @@
 		958B6302292FEB9700BE49F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				958B62F8292FD6E600BE49F7 /* CharacterCollectionViewCell.swift */,
 				958B62E8292FD21500BE49F7 /* Main.storyboard */,
 				958B62ED292FD21600BE49F7 /* LaunchScreen.storyboard */,
 			);
@@ -132,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				958B6306292FEBF200BE49F7 /* Service.swift */,
+				958B6308292FED6200BE49F7 /* BaseResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -235,7 +247,10 @@
 				958B62F7292FD6C000BE49F7 /* CharactersViewController.swift in Sources */,
 				95CD1EE429314A5C003DE843 /* EpisodeListViewController.swift in Sources */,
 				958B62E7292FD21500BE49F7 /* ViewController.swift in Sources */,
+				95D016A3293688CD002AB244 /* CoreDataManager.swift in Sources */,
 				958B62E3292FD21500BE49F7 /* AppDelegate.swift in Sources */,
+				95D016A529368965002AB244 /* NoteListViewController.swift in Sources */,
+				95D016CB29368BFB002AB244 /* BreakingBad.xcdatamodeld in Sources */,
 				95CD1EE629314B72003DE843 /* Episode.swift in Sources */,
 				958B6309292FED6200BE49F7 /* BaseResponse.swift in Sources */,
 				958B6307292FEBF200BE49F7 /* Service.swift in Sources */,
@@ -244,6 +259,7 @@
 				958B62FF292FEAE600BE49F7 /* Character.swift in Sources */,
 				95CD1EE829315BDB003DE843 /* ImdbViewController.swift in Sources */,
 				95CD1EEE29323ACD003DE843 /* Quote.swift in Sources */,
+				95D016CD29369616002AB244 /* NoteAddEditViewController.swift in Sources */,
 				958B62FD292FD90600BE49F7 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +497,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		95D016C929368BFB002AB244 /* BreakingBad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95D016CA29368BFB002AB244 /* BreakingBad.xcdatamodel */,
+			);
+			currentVersion = 95D016CA29368BFB002AB244 /* BreakingBad.xcdatamodel */;
+			path = BreakingBad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 958B62D7292FD21500BE49F7 /* Project object */;
 }

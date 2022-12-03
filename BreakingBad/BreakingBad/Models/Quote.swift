@@ -6,7 +6,6 @@
 //
 
 import Foundation
-// MARK: - WelcomeElement
 struct Quote: Codable {
     let quoteID: Int
     let quote, author, series: String

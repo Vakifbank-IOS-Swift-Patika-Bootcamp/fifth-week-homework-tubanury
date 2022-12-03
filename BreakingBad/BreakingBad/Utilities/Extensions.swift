@@ -6,9 +6,19 @@
 //
 
 import Foundation
-
+import UIKit
 
 extension String {
+    
+    func firstNumber() -> Int {
+        for character in self {
+            if character.isNumber{
+                return Int(String(character)) ?? 0
+            }
+        }
+        return 0
+    }
+    
     
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
@@ -38,5 +48,13 @@ extension String {
         else {
             return self
         }
+    }
+}
+
+extension UIViewController {
+    func presentAlert(title: String, message: String){ //todo: title ve message parametre olarak alıp reusable hale getir.
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
